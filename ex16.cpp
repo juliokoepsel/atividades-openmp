@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     printf("Informe o valor máximo: ");
     std::cin >> fimIntervalo;
 
-#pragma omp parallel num_threads(numThreads) shared(soma)
+#pragma omp parallel num_threads(numThreads) reduction(+:soma)
     {
         // Gerador de números aleatórios
         std::random_device rd;
